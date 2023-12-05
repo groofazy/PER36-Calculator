@@ -1,0 +1,34 @@
+#this code evaluates the stats a player would put up, if given 36 minutes a night, using his per minute stats
+
+PER36_VAL = 36
+
+player_name = str(input("Player name: "))
+player_minutes = float(input("Average amount of minutes he plays: "))
+
+#collecting player statistics on a per game basis
+ppg = float(input("Points per game: "))
+ast = float(input("Assists Per Game: "))
+reb = float(input("Rebounds Per Game: "))
+defn = float(input("Steals and Blocks per Game: "))
+print("")
+#using user inputted stats to get a per minute basis, then converting it into a PER36 Value
+per36_ppg = (ppg / player_minutes) * PER36_VAL
+per36_ast = (ast / player_minutes) * PER36_VAL
+per36_reb = (reb / player_minutes) * PER36_VAL
+per36_defn = (defn / player_minutes) * PER36_VAL
+
+#printing before data manipulation
+print(f"Before PER36, {player_name}'s per game stats are:")
+print(f"{ppg} points per game")
+print(f"{ast} assists per game")
+print(f"{reb} rebounds per game")
+print(f"{defn} steals and blocks per game")
+
+print("")
+
+#printing after per36 manipulation
+print(f"After PER36, {player_name}'s per 36 minutes stats are:")
+print(f"{per36_ppg:.1f} points per 36")
+print(f"{per36_ast:.1f} assists per 36")
+print(f"{per36_reb:.1f} rebounds per 36")
+print(f"{per36_defn:.1f} steals and blocks per 36")
